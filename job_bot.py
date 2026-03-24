@@ -4,8 +4,8 @@ import time
 import re
 import os
 
-TELEGRAM_TOKEN = os.environ["8790876448:AAHGPDrB1UPGI2QUbo_B7MIDsGZ0AA_7PYM"]
-CHAT_ID = os.environ["5254345163"]
+TELEGRAM_TOKEN = os.environ["TELEGRAM_TOKEN"]
+CHAT_ID = os.environ["CHAT_ID"]
 
 # Keywords that signal C2C / contract roles
 C2C_KEYWORDS = ["c2c", "corp to corp", "corp-to-corp", "contract", "1099", "w2/c2c", "w2 or c2c"]
