@@ -2,8 +2,8 @@ name: LinkedIn Job Bot
 
 on:
   schedule:
-    - cron: '0 */6 * * *'   # Runs every 6 hours
-  workflow_dispatch:          # Also allows manual trigger
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
 
 jobs:
   run-bot:
@@ -24,36 +24,3 @@ jobs:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
         run: python job_bot.py
-```
-
-Push this file and **your bot will run automatically every 6 hours** — no PC needed, completely free.
-
----
-
-### ✅ Option B: Railway.app (Always-On, Free Tier)
-
-If you want it running continuously rather than on a schedule:
-1. Go to [railway.app](https://railway.app) → sign in with GitHub
-2. **New Project → Deploy from GitHub** → select your repo
-3. Add environment variables: `TELEGRAM_TOKEN` and `CHAT_ID`
-4. Add a `requirements.txt`:
-```
-   requests
-   beautifulsoup4
-```
-5. Railway will keep it running 24/7
-
----
-
-## PHASE 4 — What You'll Receive in Telegram
-
-Each alert will look like this:
-```
-🔔 New C2C Job Alert!
-
-💼 Title: Senior Java Developer
-🏢 Company: TechCorp Solutions
-📍 Location: Dallas, TX (Remote)
-⏳ Experience: 5+ years
-📧 Contact Email: recruiter@techcorp.com
-🔗 Link: https://linkedin.com/jobs/view/...
